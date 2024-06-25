@@ -8,9 +8,13 @@ class Movie
     private int $vote;
 
     //creo una funzione col costruttore, per convenzione si mette in alto
-    public function __construct()
+    //le () simbooleggiano () in basso dove definisco le mie variabili
+    public function __construct(string $_title, string $_category, int $_vote)
     {
-        echo 'ci sono';
+        //cosi facendo assegnamo dei parametri $_ alle nostre istanze
+        $this->title = $_title;
+        $this->category = $_category;
+        $this->vote = $_vote;
     }
 
     //per leggere proprietà private si creano dei metodi(funzioni dentro le classi) che sono public
@@ -50,19 +54,13 @@ class Movie
 }
 
 //definisco le variabili d'istanza
-$ilgrandefilm = new Movie();
+$movie1 = new Movie("Il Grande Film", "Documentary", 8);
+$movie2 = new Movie("La Grande Risata", "Comedy", 7);
+$movie3 = new Movie("V per Vuejs", "Action", 8);
+$movie4 = new Movie("The Lord of Ping", "Fantasy", 10);
 
 
-$lagranderisata = new Movie();
-
-
-$vpervuejs = new Movie();
-
-
-$thelordofping = new Movie();
-
-
-var_dump($ilgrandefilm);
-var_dump($lagranderisata);
-var_dump($vpervuejs);
-var_dump($thelordofping);
+var_dump($movie1);
+var_dump($movie2);
+var_dump($movie3);
+var_dump($movie4);
