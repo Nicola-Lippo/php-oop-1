@@ -69,10 +69,7 @@ try {
     $movie3 = new Movie("V per Vuejs", "Action", 5);
     $movie4 = new Movie("The Lord of Ping", "Fantasy", 10);
 
-    var_dump($movie1);
-    var_dump($movie2);
-    var_dump($movie3);
-    var_dump($movie4);
+    $movies_list = [$movie1, $movie2, $movie3, $movie4];
     /*
     quando si usa set 
     $movie3->setVote(5);
@@ -82,3 +79,33 @@ try {
     // var_dump($error);
     echo '<h1 class="text-center">' . $error->getMessage() . '</h1>';
 }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP OOP Movies</title>
+</head>
+
+<body>
+    <section>
+        <h2>Films</h2>
+        <ul>
+            <?php foreach ($movies_list as $movie) : ?>
+                <li>
+                    <div>
+                        <h3>Titolo: <?php echo $movie->getTitle() ?></h3>
+                        <div>Categoria: <?php echo $movie->getCategory() ?></div>
+                        <div>Voto: <?php echo $movie->getVote() ?></div>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
+
+</body>
+
+</html>

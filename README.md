@@ -10,3 +10,6 @@ create un file index.php(classe, variabili e metodi d'istanza ) in cui:
 2 vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
 
 3 gestite almeno una Exception nella logica dei vostri metodi
+
+Bonus 
+Creare un layout completo per stampare a schermo una lista di movies.
