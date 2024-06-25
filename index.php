@@ -2,25 +2,65 @@
 //creo la classe, le classi si nominano in PascalCase
 class Movie
 {
-    public $title;
-    public $category;
+    //private = per preservare lo sato della nostra classe
+    private string $title;
+    private string $category;
+    private int $vote;
+
+    //creo una funzione col costruttore, per convenzione si mette in alto
+    public function __construct()
+    {
+        echo 'ci sono';
+    }
+
+    //per leggere proprietà private si creano dei metodi(funzioni dentro le classi) che sono public
+    //GET per convenzione get + valore
+    public function getTitle(): string
+    {
+        // this serve per restituire la variabile d'istanza
+        return $this->title;
+    }
+    //per settare le proprietà
+    //SET set + valore
+    //void si usa quando il metodo non deve restituire nulla
+    public function setTitle(string $titolo): void
+    {
+        $this->title = $titolo;
+    }
+    /*************/
+    public function getCategory(): string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $categoria): void
+    {
+        $this->category = $categoria;
+    }
+    /*************/
+    public function get(): int
+    {
+        return $this->vote;
+    }
+
+    public function set(int $voto): void
+    {
+        $this->vote = $voto;
+    }
 }
-//definisco le variabili d?istanza
+
+//definisco le variabili d'istanza
 $ilgrandefilm = new Movie();
-$ilgrandefilm->title = 'Il Grande Film';
-$ilgrandefilm->category = 'Documentary';
+
 
 $lagranderisata = new Movie();
-$lagranderisata->title = 'La Grande Risata';
-$lagranderisata->category = 'Comedy';
+
 
 $vpervuejs = new Movie();
-$vpervuejs->title = 'V per Vuejs';
-$vpervuejs->category = 'Action';
+
 
 $thelordofping = new Movie();
-$thelordofping->title = 'The Lord of Ping';
-$thelordofping->category = 'Fantasy';
+
 
 var_dump($ilgrandefilm);
 var_dump($lagranderisata);
